@@ -1,0 +1,31 @@
+{
+  "name": "tasktrack",
+  "version": "1.0.0",
+  "description": "To-do list",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtang22/TaskTrack.git"
+  },
+  "keywords": [
+    "todo",
+    "nodejs",
+    "tasktrack"
+  ],
+  "author": "Jordan Tang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtang22/TaskTrack/issues"
+  },
+  "homepage": "https://github.com/jtang22/TaskTrack#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.4.12",
+    "morgan": "^1.7.0"
+  }
+}
