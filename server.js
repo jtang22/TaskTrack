@@ -27,10 +27,6 @@ var Todo = mongoose.model('Todo', {
   text : String
 });
 
-//listen (app starts with node server.js) ====
-app.listen(8080);
-console.log("App listening on port 8080");
-
 // routes ==================
 // api -------
 // get all todos
@@ -87,3 +83,13 @@ app.delete('/api/todos/:todo_id', function(req, res) {
       });
   });
 });
+
+// application =======
+app.get('*', function(req, res) {
+  //load sinle view file, angular will handle page changes on front-end
+  res.sendfile('./public/index.html');
+});
+
+//listen (app starts with node server.js) ====
+app.listen(8080);
+console.log("App listening on port 8080");
