@@ -22,7 +22,7 @@ function mainController($scope, $http) {
         $scope.todos = data;
         console.log(data);
       })
-      .error(funciton(data) {
+      .error(function(data) {
         console.log('Error: ' + data);
       });
   };
