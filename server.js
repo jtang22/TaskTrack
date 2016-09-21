@@ -27,6 +27,11 @@ var Todo = mongoose.model('Todo', {
   text : String
 });
 
+var Complete = mongoose.model('Complete', {
+  text : String,
+  date : String
+});
+
 // routes ==================
 // api -------
 // get all todos
@@ -42,6 +47,17 @@ app.get('/api/todos', function(req, res) {
     }
     res.json(todos); // return all todos in JSON format
 
+  });
+});
+
+// Send back all completed Todos
+app.get('/api/completes', function(req, res) {
+  // use monogoose to get all completed todos in DB
+  Complete.find(function(err, completes) {
+    if(err) {
+      res.send(err);
+    }
+    res.json(completes);
   });
 });
 

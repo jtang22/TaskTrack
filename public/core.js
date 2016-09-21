@@ -14,7 +14,7 @@ function mainController($scope, $http) {
       console.log('Error: ' + data);
     });
 
-    // when submitting the add form, send text to node API
+  // when submitting the add form, send text to node API
   $scope.createTodo = function() {
     $http.post('/api/todos', $scope.formData)
       .success(function(data) {
