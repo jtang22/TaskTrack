@@ -72,6 +72,21 @@
       </div>
     </div>
 
+
+    <h2> Completed Tasks </h2>
+    <!-- COMPLETES LIST -->
+    <div id = "complete-list" class = "row">
+      <div class = "col-sm-4 col-sm-offset-4">
+
+        <!-- LOOP OVER COMPLETES IN $scope.completes -->
+        <div ng-repeat = "complete in completes">
+          <label>
+            {{ complete.date + " " + complete.text }}
+          </label>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </body>

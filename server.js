@@ -61,6 +61,27 @@ app.get('/api/completes', function(req, res) {
   });
 });
 
+// Make a new completed todo and send back after creation
+app.post('/api/completes', function(req, res) {
+  // Create a new completed todo
+  Complete.create({
+    text : req.params.text,
+    date : getMonth() + "-" + getDate() + "-" + getYear(),
+    done : false
+  }, function(err, complete) {
+      if(err)
+        res.send(err);
+
+      //get and return all completes after creating another
+      Complete.find(function(err, completes) {
+        if(err)
+          res.send(err);
+
+        res.json(completes);
+      });
+  });
+});
+
 // Create todo and send back all todos after creation
 app.post('/api/todos', function(req, res) {
 
